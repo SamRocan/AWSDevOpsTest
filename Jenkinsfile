@@ -42,7 +42,8 @@ pipeline {
                     dir('deployment') {
                         sh '''
                             terraform init
-                            terraform plan
+                            terraform fmt
+                            terraform validate
                             terraform apply -auto-approve
                         '''
                     }
