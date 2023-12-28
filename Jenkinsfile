@@ -43,8 +43,8 @@ pipeline {
                         sh '''
                             terraform init
                             terraform fmt
-                            terraform validate
-                            terraform apply -auto-approve
+                            TF_LOG=debug terraform validate
+                            TF_LOG=debug terraform apply -auto-approve
                         '''
                     }
                 }
